@@ -1,4 +1,4 @@
-{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhcos4",  "rhel8", "rhel9", "rhel10", "sle12", "sle15", "ubuntu2004", "ubuntu2204"]%}}
+{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhcos4",  "rhel8", "rhel9", "rhel10", "sle12", "sle15", "slmicro5", "ubuntu2004", "ubuntu2204"]%}}
   {{%- set perm_x="-F perm=x " %}}
 {{%- endif %}}
 
@@ -39,6 +39,7 @@ identifiers:
     cce@rhel9: CCE-83768-2
     cce@sle12: CCE-83109-9
     cce@sle15: CCE-85727-6
+    cce@slmicro5: CCE-93606-2
 
 references:
     cis-csc: 1,12,13,14,15,16,2,3,5,6,7,8,9
@@ -61,6 +62,7 @@ references:
     stigid@rhel8: RHEL-08-030317
     stigid@sle12: SLES-12-020680
     stigid@sle15: SLES-15-030110
+    stigid@slmicro5: SLEM-05-654120
 
 {{{ ocil_fix_srg_privileged_command("unix_chkpwd") }}}
 
@@ -70,3 +72,4 @@ template:
         path: /usr/sbin/unix_chkpwd
         path@sle12: /sbin/unix_chkpwd
         path@sle15: /sbin/unix_chkpwd
+        path@slmicro5: /sbin/unix_chkpwd
