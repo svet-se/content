@@ -1,8 +1,8 @@
-{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhel8", "rhel9", "rhel10", "sle12", "sle15", "ubuntu2004", "ubuntu2204"] %}}
+{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhel8", "rhel9", "rhel10", "sle12", "sle15", "susemicro5", "ubuntu2004", "ubuntu2204"] %}}
   {{%- set perm_x="-F perm=x " %}}
 {{%- endif %}}
 
-{{%- if product in ["sle12", "sle15"] %}}
+{{%- if product in ["sle12", "sle15", "susemicro5"] %}}
   {{%- set ssh_keysign_path="/usr/lib/ssh/ssh-keysign" %}}
 {{%- elif 'ubuntu' in product %}}
   {{%- set ssh_keysign_path="/usr/lib/openssh/ssh-keysign" %}}
@@ -47,6 +47,7 @@ identifiers:
     cce@rhel9: CCE-83776-5
     cce@sle12: CCE-83159-4
     cce@sle15: CCE-85582-5
+    cce@susemicro5: CCE-93601-3
 
 references:
     cis-csc: 1,12,13,14,15,16,2,3,5,6,7,8,9
@@ -68,6 +69,7 @@ references:
     stigid@rhel8: RHEL-08-030320
     stigid@sle12: SLES-12-020320
     stigid@sle15: SLES-15-030060
+    stigid@susemicro5: SLEM-05-654100
     stigid@ubuntu2004: UBTU-20-010141
     stigid@ubuntu2204: UBTU-22-654095
 
@@ -79,5 +81,6 @@ template:
         path: /usr/libexec/openssh/ssh-keysign
         path@sle12: /usr/lib/ssh/ssh-keysign
         path@sle15: /usr/lib/ssh/ssh-keysign
+        path@susemicro5: /usr/lib/ssh/ssh-keysign
         path@ubuntu2004: /usr/lib/openssh/ssh-keysign
         path@ubuntu2204: /usr/lib/openssh/ssh-keysign
