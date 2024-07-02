@@ -1,4 +1,4 @@
-{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhcos4",  "rhel8", "rhel9", "rhel10", "sle12", "sle15", "ubuntu2004", "ubuntu2204"]%}}
+{{%- if product in ["fedora", "ol7", "ol8", "ol9", "rhcos4",  "rhel8", "rhel9", "rhel10", "sle12", "sle15", "slmicro5", "ubuntu2004", "ubuntu2204"]%}}
   {{%- set perm_x="-F perm=x " %}}
 {{%- endif %}}
 
@@ -39,6 +39,7 @@ identifiers:
     cce@rhel9: CCE-83766-6
     cce@sle12: CCE-83162-8
     cce@sle15: CCE-85585-8
+    cce@slmicro5: CCE-93604-7
 
 references:
     cis-csc: 1,12,13,14,15,16,2,3,5,6,7,8,9
@@ -61,6 +62,7 @@ references:
     stigid@rhel8: RHEL-08-030350
     stigid@sle12: SLES-12-020570
     stigid@sle15: SLES-15-030090
+    stigid@slmicro5: SLEM-05-654065
     stigid@ubuntu2004: UBTU-20-010164
     stigid@ubuntu2204: UBTU-22-654070
 
