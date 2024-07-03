@@ -29,6 +29,7 @@ severity: medium
 identifiers:
     cce@sle12: CCE-83187-5
     cce@sle15: CCE-85589-0
+    cce@slmicro5: CCE-93610-4
 
 references:
     cis@ubuntu2004: 4.1.11
@@ -37,6 +38,7 @@ references:
     nist: AU-3,AU-12(a),AU-12(c),MA-4(1)(a)
     stigid@sle12: SLES-12-020280
     stigid@sle15: SLES-15-030340
+    stigid@slmicro5: SLEM-05-654025
     stigid@ubuntu2004: UBTU-20-010137
     stigid@ubuntu2204: UBTU-22-654030
 
