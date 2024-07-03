@@ -19,6 +19,7 @@ identifiers:
     cce@rhel9: CCE-83972-0
     cce@sle12: CCE-83125-5
     cce@sle15: CCE-83299-8
+    cce@slmicro5: CCE-93627-8
 
 references:
     disa: CCI-002824,CCI-000366
@@ -29,6 +30,7 @@ references:
     stigid@rhel8: RHEL-08-040283
     stigid@sle12: SLES-12-030320
     stigid@sle15: SLES-15-010540
+    stigid@slmicro5: SLEM-05-213025
 
 {{{ complete_ocil_entry_sysctl_option_value(sysctl="kernel.kptr_restrict", value="1") }}}
 
