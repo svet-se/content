@@ -1401,8 +1401,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "gpasswd" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_gpasswd
+      status: automated
 
     - id: SLEM-05-654050
       levels:
@@ -1429,8 +1430,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "newgrp" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_newgrp
+      status: automated
 
     - id: SLEM-05-654070
       levels:
@@ -1445,8 +1447,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "passwd" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_passwd
+      status: automated
 
     - id: SLEM-05-654080
       levels:
@@ -1480,8 +1483,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "ssh-keysign" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_ssh_keysign
+      status: automated
 
     - id: SLEM-05-654105
       levels:
