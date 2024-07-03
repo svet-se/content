@@ -46,7 +46,6 @@ references:
     stigid@rhel8: RHEL-08-040239
     stigid@sle12: SLES-12-030360
     stigid@sle15: SLES-15-040300
-    stigid@slmicro5: SLEM-05-253010
 
 {{{ complete_ocil_entry_sysctl_option_value(sysctl="net.ipv4.conf.all.accept_source_route", value="0") }}}
 

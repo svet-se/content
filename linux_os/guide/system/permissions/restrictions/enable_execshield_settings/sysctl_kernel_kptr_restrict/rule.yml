@@ -30,7 +30,6 @@ references:
     stigid@rhel8: RHEL-08-040283
     stigid@sle12: SLES-12-030320
     stigid@sle15: SLES-15-010540
-    stigid@slmicro5: SLEM-05-213025
 
 {{{ complete_ocil_entry_sysctl_option_value(sysctl="kernel.kptr_restrict", value="1") }}}
 
