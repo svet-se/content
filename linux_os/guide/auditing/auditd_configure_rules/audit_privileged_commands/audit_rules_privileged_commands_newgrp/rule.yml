@@ -62,7 +62,6 @@ references:
     stigid@rhel8: RHEL-08-030350
     stigid@sle12: SLES-12-020570
     stigid@sle15: SLES-15-030090
-    stigid@slmicro5: SLEM-05-654065
     stigid@ubuntu2004: UBTU-20-010164
     stigid@ubuntu2204: UBTU-22-654070
 
