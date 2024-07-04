@@ -63,8 +63,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must restrict access to the kernel message buffer.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_kernel_dmesg_restrict
+      status: automated
 
     - id: SLEM-05-213015
       levels:
@@ -79,8 +80,9 @@ controls:
       title:
           Address space layout randomization (ASLR) must be implemented by SLEM 5 to
           protect memory from unauthorized code execution.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_kernel_randomize_va_space
+      status: automated
 
     - id: SLEM-05-213025
       levels:
@@ -88,8 +90,9 @@ controls:
       title:
           SLEM 5 must implement kptr-restrict to prevent the leaking of internal kernel
           addresses.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_kernel_kptr_restrict
+      status: automated
 
     - id: SLEM-05-214010
       levels:
@@ -414,8 +417,9 @@ controls:
       title:
           SLEM 5 must not forward Internet Protocol version 4 (IPv4) source-routed
           packets.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_all_accept_source_route
+      status: automated
 
     - id: SLEM-05-253015
       levels:
@@ -423,8 +427,9 @@ controls:
       title:
           SLEM 5 must not forward Internet Protocol version 4 (IPv4) source-routed
           packets by default.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_default_accept_source_route
+      status: automated
 
     - id: SLEM-05-253020
       levels:
@@ -432,8 +437,9 @@ controls:
       title:
           SLEM 5 must prevent Internet Protocol version 4 (IPv4) Internet Control Message
           Protocol (ICMP) redirect messages from being accepted.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_all_accept_redirects
+      status: automated
 
     - id: SLEM-05-253025
       levels:
@@ -441,8 +447,9 @@ controls:
       title:
           SLEM 5 must not allow interfaces to accept Internet Protocol version 4 (IPv4)
           Internet Control Message Protocol (ICMP) redirect messages by default.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_default_accept_redirects
+      status: automated
 
     - id: SLEM-05-253030
       levels:
@@ -450,8 +457,9 @@ controls:
       title:
           SLEM 5 must not send Internet Protocol version 4 (IPv4) Internet Control
           Message Protocol (ICMP) redirects.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_all_send_redirects
+      status: automated
 
     - id: SLEM-05-253035
       levels:
@@ -459,8 +467,9 @@ controls:
       title:
           SLEM 5 must not allow interfaces to send Internet Protocol version 4 (IPv4)
           Internet Control Message Protocol (ICMP) redirect messages by default.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_conf_default_send_redirects
+      status: automated
 
     - id: SLEM-05-253040
       levels:
@@ -468,15 +477,17 @@ controls:
       title:
           SLEM 5 must not be performing Internet Protocol version 4 (IPv4) packet forwarding
           unless the system is a router.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_ip_forward
+      status: automated
 
     - id: SLEM-05-253045
       levels:
           - medium
       title: SLEM 5 must be configured to use TCP syncookies.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv4_tcp_syncookies
+      status: automated
 
     - id: SLEM-05-254010
       levels:
@@ -484,8 +495,9 @@ controls:
       title:
           SLEM 5 must not forward Internet Protocol version 6 (IPv6) source-routed
           packets.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_all_accept_source_route
+      status: automated
 
     - id: SLEM-05-254015
       levels:
@@ -493,8 +505,9 @@ controls:
       title:
           SLEM 5 must not forward Internet Protocol version 6 (IPv6) source-routed
           packets by default.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_default_accept_source_route
+      status: automated
 
     - id: SLEM-05-254020
       levels:
@@ -502,8 +515,9 @@ controls:
       title:
           SLEM 5 must prevent Internet Protocol version 6 (IPv6) Internet Control Message
           Protocol (ICMP) redirect messages from being accepted.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_all_accept_redirects
+      status: automated
 
     - id: SLEM-05-254025
       levels:
@@ -511,8 +525,9 @@ controls:
       title:
           SLEM 5 must not allow interfaces to accept Internet Protocol version 6 (IPv6)
           Internet Control Message Protocol (ICMP) redirect messages by default.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_default_accept_redirects
+      status: automated
 
     - id: SLEM-05-254030
       levels:
@@ -520,8 +535,9 @@ controls:
       title:
           SLEM 5 must not be performing Internet Protocol version 6 (IPv6) packet forwarding
           unless the system is a router.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_all_forwarding
+      status: automated
 
     - id: SLEM-05-254035
       levels:
@@ -529,8 +545,9 @@ controls:
       title:
           SLEM 5 must not be performing Internet Protocol version 6 (IPv6) packet forwarding
           by default unless the system is a router.
-      rules: []
-      status: pending
+      rules:
+          - sysctl_net_ipv6_conf_default_forwarding
+      status: automated
 
     - id: SLEM-05-255010
       levels:
@@ -1351,8 +1368,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "chacl" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_execution_chacl
+      status: automated
 
     - id: SLEM-05-654015
       levels:
@@ -1366,36 +1384,41 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "chcon" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_execution_chcon
+      status: automated
 
     - id: SLEM-05-654025
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "chfn" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_chfn
+      status: automated
 
     - id: SLEM-05-654030
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "chmod" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_execution_chmod
+      status: automated
 
     - id: SLEM-05-654035
       levels:
           - medium
       title: SLEM 5 must generate audit records for a uses of the "chsh" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_chsh
+      status: automated
 
     - id: SLEM-05-654040
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "crontab" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_crontab
+      status: automated
 
     - id: SLEM-05-654045
       levels:
@@ -1409,22 +1432,25 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "insmod" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_insmod
+      status: automated
 
     - id: SLEM-05-654055
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "kmod" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_kmod
+      status: automated
 
     - id: SLEM-05-654060
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "modprobe" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_modprobe
+      status: automated
 
     - id: SLEM-05-654065
       levels:
@@ -1440,8 +1466,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "pam_timestamp_check"
           command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_pam_timestamp_check
+      status: automated
 
     - id: SLEM-05-654075
       levels:
@@ -1455,29 +1482,33 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "rm" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_execution_rm
+      status: automated
 
     - id: SLEM-05-654085
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "rmmod" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_rmmod
+      status: automated
 
     - id: SLEM-05-654090
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "setfacl" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_execution_setfacl
+      status: automated
 
     - id: SLEM-05-654095
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "ssh-agent" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_ssh_agent
+      status: automated
 
     - id: SLEM-05-654100
       levels:
@@ -1491,22 +1522,25 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "su" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_su
+      status: automated
 
     - id: SLEM-05-654110
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "sudo" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_sudo
+      status: automated
 
     - id: SLEM-05-654115
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "sudoedit" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_sudoedit
+      status: automated
 
     - id: SLEM-05-654120
       levels:
@@ -1514,15 +1548,17 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "unix_chkpwd" or "unix2_chkpwd"
           commands.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_unix_chkpwd
+      status: automated
 
     - id: SLEM-05-654125
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "usermod" command.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_privileged_commands_usermod
+      status: automated
 
     - id: SLEM-05-654130
       levels:
