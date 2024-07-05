@@ -31,8 +31,9 @@ controls:
       title:
           SLEM 5 must display the Standard Mandatory DOD Notice and Consent Banner
           before granting any local or remote connection to the system.
-      rules: []
-      status: pending
+      rules:
+          - sshd_enable_warning_banner
+      status: automated
 
     - id: SLEM-05-211025
       levels:
@@ -580,8 +581,10 @@ controls:
       levels:
           - high
       title: SLEM 5 must not allow unattended or automatic logon via SSH.
-      rules: []
-      status: pending
+      rules:
+          - sshd_do_not_permit_user_env
+          - sshd_disable_empty_passwords
+      status: automated
 
     - id: SLEM-05-255030
       levels:
@@ -607,8 +610,9 @@ controls:
       title:
           SLEM 5 SSH daemon must disable forwarded remote X connections for interactive
           users, unless to fulfill documented and validated mission requirements.
-      rules: []
-      status: pending
+      rules:
+          - sshd_disable_x11_forwarding
+      status: automated
 
     - id: SLEM-05-255045
       levels:
@@ -643,15 +647,17 @@ controls:
       title:
           SLEM 5 must deny direct logons to the root account using remote access via
           SSH.
-      rules: []
-      status: pending
+      rules:
+          - sshd_disable_root_login
+      status: automated
 
     - id: SLEM-05-255065
       levels:
           - medium
       title: SLEM 5 must log SSH connection attempts and failures to the server.
-      rules: []
-      status: pending
+      rules:
+          - sshd_set_loglevel_verbose
+      status: automated
 
     - id: SLEM-05-255070
       levels:
@@ -659,8 +665,9 @@ controls:
       title:
           SLEM 5 must display the date and time of the last successful account logon
           upon an SSH logon.
-      rules: []
-      status: pending
+      rules:
+          - sshd_print_last_log
+      status: automated
 
     - id: SLEM-05-255075
       levels:
@@ -668,7 +675,8 @@ controls:
       title:
           SLEM 5 SSH daemon must be configured to not allow authentication using known
           hosts authentication.
-      rules: []
+      rules:
+          - sshd_disable_user_known_hosts
       status: pending
 
     - id: SLEM-05-255080
@@ -677,8 +685,9 @@ controls:
       title:
           SLEM 5 SSH daemon must perform strict mode checking of home directory configuration
           files.
-      rules: []
-      status: pending
+      rules:
+          - sshd_enable_strictmodes
+      status: automated
 
     - id: SLEM-05-255085
       levels:
@@ -1566,8 +1575,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all account creations, modifications,
           disabling, and termination events that affect /etc/group.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_usergroup_modification_group
+      status: automated
 
     - id: SLEM-05-654135
       levels:
@@ -1575,8 +1585,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all account creations, modifications,
           disabling, and termination events that affect /etc/security/opasswd.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_usergroup_modification_opasswd
+      status: automated
 
     - id: SLEM-05-654140
       levels:
@@ -1584,8 +1595,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all account creations, modifications,
           disabling, and termination events that affect /etc/passwd.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_usergroup_modification_passwd
+      status: automated
 
     - id: SLEM-05-654145
       levels:
@@ -1593,8 +1605,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all account creations, modifications,
           disabling, and termination events that affect /etc/shadow.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_usergroup_modification_shadow
+      status: automated
 
     - id: SLEM-05-654150
       levels:
@@ -1602,8 +1615,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "chmod", "fchmod"
           and "fchmodat" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_dac_modification_fchmod
+      status: automated
 
     - id: SLEM-05-654155
       levels:
@@ -1611,8 +1625,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "chown", "fchown",
           "fchownat", and "lchown" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_dac_modification_lchown
+      status: automated
 
     - id: SLEM-05-654160
       levels:
@@ -1645,8 +1660,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "mount" system call.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_media_export
+      status: automated
 
     - id: SLEM-05-654180
       levels:
@@ -1654,15 +1670,17 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "setxattr", "fsetxattr",
           "lsetxattr", "removexattr", "fremovexattr", and "lremovexattr" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_dac_modification_fremovexattr
+      status: automated
 
     - id: SLEM-05-654185
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of the "umount" system call.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_dac_modification_umount2
+      status: automated
 
     - id: SLEM-05-654190
       levels:
