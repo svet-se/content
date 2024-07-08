@@ -231,15 +231,17 @@ controls:
       levels:
           - medium
       title: SLEM 5 library directories must have mode 755 or less permissive.
-      rules: []
-      status: pending
+      rules:
+          - dir_permissions_library_dirs
+      status: automated
 
     - id: SLEM-05-232025
       levels:
           - medium
       title: SLEM 5 library files must have mode 755 or less permissive.
-      rules: []
-      status: pending
+      rules:
+          - file_permissions_library_dirs
+      status: automated
 
     - id: SLEM-05-232030
       levels:
@@ -261,8 +263,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 SSH daemon public host key files must have mode 644 or less permissive.
-      rules: []
-      status: pending
+      rules:
+          - file_permissions_sshd_pub_key
+      status: automated
 
     - id: SLEM-05-232045
       levels:
@@ -381,8 +384,9 @@ controls:
       title:
           SLEM 5 must generate error messages that provide information necessary for
           corrective actions without revealing information that could be exploited by adversaries.
-      rules: []
-      status: pending
+      rules:
+          - permissions_local_var_log
+      status: automated
 
     - id: SLEM-05-251010
       levels:
@@ -1635,8 +1639,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "creat", "open", "openat",
           "open_by_handle_at", "truncate", and "ftruncate" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_unsuccessful_file_modification_open
+      status: automated
 
     - id: SLEM-05-654165
       levels:
@@ -1688,8 +1693,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "unlink", "unlinkat",
           "rename", "renameat", and "rmdir" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_unsuccessful_file_modification_rename
+      status: automated
 
     - id: SLEM-05-654195
       levels:
@@ -1704,8 +1710,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all modifications to the "lastlog"
           file.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_login_events_lastlog
+      status: automated
 
     - id: SLEM-05-654205
       levels:
@@ -1713,8 +1720,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all modifications to the "tallylog"
           file must generate an audit record.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_login_events_tallylog
+      status: automated
 
     - id: SLEM-05-654210
       levels:
