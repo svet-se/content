@@ -31,7 +31,7 @@ cpes:
 
   - slmicro-5.4:
       name: "cpe:/o:suse:sle-microos:5.4"
-      title: "SLE Micro 5.5"
+      title: "SLE Micro 5.4"
       check_id: installed_OS_is_slmicro5
 
   - slmicro-5.5:
