@@ -627,8 +627,10 @@ controls:
       title:
           SLEM 5 must implement DOD-approved encryption to protect the confidentiality
           of SSH remote connections.
-      rules: []
-      status: pending
+      rules:
+          - sshd_use_approved_ciphers_ordered_stig
+          - sshd_use_approved_ciphers
+      status: automated
 
     - id: SLEM-05-255050
       levels:
@@ -903,8 +905,9 @@ controls:
       title:
           SLEM 5 must limit the number of concurrent sessions to 10 for all accounts
           and/or account types.
-      rules: []
-      status: pending
+      rules:
+          - accounts_max_concurrent_login_sessions
+      status: automated
 
     - id: SLEM-05-431010
       levels:
@@ -1043,8 +1046,9 @@ controls:
       title:
           SLEM 5 must configure the Linux Pluggable Authentication Modules (PAM) to
           only store encrypted representations of passwords.
-      rules: []
-      status: pending
+      rules:
+          - set_password_hashing_algorithm_systemauth
+      status: automated
 
     - id: SLEM-05-611055
       levels:
@@ -1098,8 +1102,9 @@ controls:
       title:
           SLEM 5 shadow password suite must be configured to use a sufficient number
           of hashing rounds.
-      rules: []
-      status: pending
+      rules:
+          - set_password_hashing_min_rounds_logindefs
+      status: automated
 
     - id: SLEM-05-611090
       levels:
@@ -1178,8 +1183,9 @@ controls:
           SLEM 5, for PKI-based authentication, must validate certificates by constructing
           a certification path (which includes status information) to an accepted trust
           anchor.
-      rules: []
-      status: pending
+      rules:
+          - smartcard_configure_ca
+      status: automated
 
     - id: SLEM-05-631025
       levels:
@@ -1301,8 +1307,9 @@ controls:
       title:
           SLEM 5 audit system must take appropriate action when the audit storage volume
           is full.
-      rules: []
-      status: pending
+      rules:
+          - auditd_data_disk_full_action
+      status: automated
 
     - id: SLEM-05-653040
       levels:
@@ -1368,8 +1375,9 @@ controls:
           The information system security officer (ISSO) and system administrator (SA),
           at a minimum, must have mail aliases to be notified of a SLEM 5 audit processing
           failure.
-      rules: []
-      status: pending
+      rules:
+          - postfix_client_configure_mail_alias
+      status: automated
 
     - id: SLEM-05-653080
       levels:
@@ -1377,8 +1385,9 @@ controls:
       title:
           The information system security officer (ISSO) and system administrator (SA),
           at a minimum, must be alerted of a SLEM 5 audit processing failure event.
-      rules: []
-      status: pending
+      rules:
+          - auditd_data_retention_action_mail_acct
+      status: automated
 
     - id: SLEM-05-654010
       levels:
@@ -1652,8 +1661,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "delete_module" system
           call.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_kernel_module_loading_delete
+      status: automated
 
     - id: SLEM-05-654170
       levels:
@@ -1661,8 +1671,9 @@ controls:
       title:
           SLEM 5 must generate audit records for all uses of the "init_module" and
           "finit_module" system calls.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_kernel_module_loading_finit
+      status: automated
 
     - id: SLEM-05-654175
       levels:
@@ -1733,8 +1744,9 @@ controls:
       title:
           SLEM 5 must audit all uses of the sudoers file and all files in the "/etc/sudoers.d/"
           directory.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_sysadmin_actions
+      status: automated
 
     - id: SLEM-05-654215
       levels:
