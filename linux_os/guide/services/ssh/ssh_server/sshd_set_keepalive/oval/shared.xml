@@ -6,7 +6,7 @@
       <criteria operator="AND" comment="sshd is not required and not installed">
         <extend_definition definition_ref="sshd_not_required_or_unset"
           comment="sshd is not required or requirement is unset"/>
-        {{% if product in ['opensuse', 'sle12','sle15'] %}}
+        {{% if product in ['opensuse', 'sle12','sle15', 'slmicro5'] %}}
         <extend_definition definition_ref="package_openssh_removed"
           comment="rpm package openssh removed"/>
         {{% else %}}
@@ -17,7 +17,7 @@
       <criteria operator="AND" comment="sshd is installed and configured">
         <extend_definition definition_ref="sshd_required_or_unset"
           comment="sshd is required or requirement is unset"/>
-        {{% if product in ['opensuse', 'sle12','sle15'] %}}
+        {{% if product in ['opensuse', 'sle12','sle15', 'slmicro5'] %}}
         <extend_definition definition_ref="package_openssh_installed"
           comment="rpm package openssh installed"/>
         {{% else %}}
