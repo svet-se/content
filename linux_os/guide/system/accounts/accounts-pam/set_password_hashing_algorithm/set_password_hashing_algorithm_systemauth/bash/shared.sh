@@ -1,6 +1,6 @@
 # platform = multi_platform_all
 
-{{% if product in ["sle15", "sle12"] -%}}
+{{% if product in ["sle15", "sle12", "slmicro5"] -%}}
 {{{ bash_ensure_pam_module_configuration('/etc/pam.d/common-password', 'password', 'required', 'pam_unix.so', 'sha512', '', '') }}}
 {{% elif 'ubuntu' in product -%}}
 # Can't use macro bash_ensure_pam_module_configuration because the control
