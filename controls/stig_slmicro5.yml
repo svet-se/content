@@ -224,8 +224,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must have system commands set to a mode of 755 or less permissive.
-      rules: []
-      status: pending
+      rules:
+          - file_permissions_binary_dirs
+      status: automated
 
     - id: SLEM-05-232020
       levels:
@@ -309,22 +310,25 @@ controls:
       levels:
           - medium
       title: SLEM 5 must have system commands owned by root.
-      rules: []
-      status: pending
+      rules:
+          - file_ownership_binary_dirs
+      status: automated
 
     - id: SLEM-05-232075
       levels:
           - medium
       title: SLEM 5 must have system commands group-owned by root or a system account.
-      rules: []
-      status: pending
+      rules:
+          - file_groupownership_system_commands_dirs
+      status: automated
 
     - id: SLEM-05-232080
       levels:
           - medium
       title: SLEM 5 must have directories that contain system commands owned by root.
-      rules: []
-      status: pending
+      rules:
+          - dir_system_commands_root_owned
+      status: automated
 
     - id: SLEM-05-232085
       levels:
@@ -332,8 +336,9 @@ controls:
       title:
           SLEM 5 must have directories that contain system commands group-owned by
           root.
-      rules: []
-      status: pending
+      rules:
+          - dir_system_commands_group_root_owned
+      status: automated
 
     - id: SLEM-05-232090
       levels:
@@ -371,15 +376,17 @@ controls:
       levels:
           - medium
       title: The sticky bit must be set on all SLEM 5 world-writable directories.
-      rules: []
-      status: pending
+      rules:
+          - dir_perms_world_writable_sticky_bits
+      status: automated
 
     - id: SLEM-05-232115
       levels:
           - medium
       title: SLEM 5 must prevent unauthorized users from accessing system error messages.
-      rules: []
-      status: pending
+      rules:
+          - file_permissions_local_var_log_messages
+      status: automated
 
     - id: SLEM-05-232120
       levels:
@@ -608,8 +615,10 @@ controls:
       title:
           SLEM 5 must be configured so that all network connections associated with
           SSH traffic are terminated after 10 minutes of becoming unresponsive.
-      rules: []
-      status: pending
+      rules:
+          - sshd_set_idle_timeout
+          - sshd_set_keepalive
+      status: automated
 
     - id: SLEM-05-255040
       levels:
@@ -638,8 +647,10 @@ controls:
       title:
           SLEM 5 SSH daemon must be configured to only use Message Authentication Codes
           (MACs) employing FIPS 140-2/140-3 approved cryptographic hash algorithms.
-      rules: []
-      status: pending
+      rules:
+          - sshd_use_approved_macs_ordered_stig
+          - sshd_use_approved_macs
+      status: automated
 
     - id: SLEM-05-255055
       levels:
@@ -647,8 +658,9 @@ controls:
       title:
           SLEM 5 SSH server must be configured to use only FIPS 140-2/140-3 validated
           key exchange algorithms.
-      rules: []
-      status: pending
+      rules:
+          - sshd_use_approved_kex_ordered_stig
+      status: automated
 
     - id: SLEM-05-255060
       levels:
@@ -850,8 +862,9 @@ controls:
       title:
           SLEM 5 must disable account identifiers (individuals, groups, roles, and
           devices) after 35 days of inactivity after password expiration.
-      rules: []
-      status: pending
+      rules:
+          - account_disable_post_pw_expiration
+      status: automated
 
     - id: SLEM-05-411075
       levels:
@@ -1070,22 +1083,25 @@ controls:
       title:
           SLEM 5 must employ user passwords with a minimum lifetime of 24 hours (one
           day).
-      rules: []
-      status: pending
+      rules:
+          - accounts_password_set_min_life_existing
+      status: automated
 
     - id: SLEM-05-611070
       levels:
           - medium
       title: SLEM 5 must employ user passwords with a maximum lifetime of 60 days.
-      rules: []
-      status: pending
+      rules:
+          - accounts_password_set_max_life_existing
+      status: automated
 
     - id: SLEM-05-611075
       levels:
           - medium
       title: SLEM 5 must employ a password history file.
-      rules: []
-      status: pending
+      rules:
+          - file_etc_security_opasswd
+      status: automated
 
     - id: SLEM-05-611080
       levels:
@@ -1093,8 +1109,9 @@ controls:
       title:
           SLEM 5 must employ FIPS 140-2/140-3-approved cryptographic hashing algorithms
           for system authentication.
-      rules: []
-      status: pending
+      rules:
+          - set_password_hashing_algorithm_logindefs
+      status: automated
 
     - id: SLEM-05-611085
       levels:
@@ -1112,8 +1129,9 @@ controls:
       title:
           SLEM 5 must employ FIPS 140-2/140-3 approved cryptographic hashing algorithm
           for system authentication (login.defs).
-      rules: []
-      status: pending
+      rules:
+          - set_password_hashing_algorithm_logindefs
+      status: automated
 
     - id: SLEM-05-611095
       levels:
@@ -1121,8 +1139,9 @@ controls:
       title:
           SLEM 5 must be configured to create or update passwords with a minimum lifetime
           of 24 hours (one day).
-      rules: []
-      status: pending
+      rules:
+          - accounts_minimum_age_login_defs
+      status: automated
 
     - id: SLEM-05-611100
       levels:
@@ -1130,8 +1149,9 @@ controls:
       title:
           SLEM 5 must be configured to create or update passwords with a maximum lifetime
           of 60 days.
-      rules: []
-      status: pending
+      rules:
+          - accounts_maximum_age_login_defs
+      status: automated
 
     - id: SLEM-05-612010
       levels:
@@ -1340,8 +1360,9 @@ controls:
       title:
           SLEM 5 audit tools must have the proper permissions configured to protect
           against unauthorized access.
-      rules: []
-      status: pending
+      rules:
+          - permissions_local_audit_binaries
+      status: automated
 
     - id: SLEM-05-653060
       levels:
