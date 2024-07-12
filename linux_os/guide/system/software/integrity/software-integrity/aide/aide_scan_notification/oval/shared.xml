@@ -52,7 +52,7 @@
     <ind:pattern operation="pattern match">^.*{{{ aide_bin_path }}}[\s]*\-\-check.*\|.*/bin/mail[\s]*-s[\s]*".*"[\s]*.+@.+$</ind:pattern>
     <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
   </ind:textfilecontent54_object>
-{{% if product in ["sle15"] %}}
+{{% if product in ["sle15", "slmicro5"] %}}
   <ind:textfilecontent54_test check="all" check_existence="all_exist"
     id="test_aidecheck_systemd_scan_report" version="1"
     comment="report results of aide check, when started by systemd">
