@@ -108,8 +108,9 @@ controls:
       levels:
           - high
       title: The SLEM 5 tool zypper must have gpgcheck enabled.
-      rules: []
-      status: pending
+      rules:
+          - ensure_gpgcheck_globally_activated
+      status: automated
 
     - id: SLEM-05-214020
       levels:
@@ -117,8 +118,9 @@ controls:
       title:
           SLEM 5 must remove all outdated software components after updated versions
           have been installed.
-      rules: []
-      status: pending
+      rules:
+          - clean_components_post_updating
+      status: automated
 
     - id: SLEM-05-215010
       levels:
@@ -414,8 +416,9 @@ controls:
       title:
           SLEM 5 clock must, for networked systems, be synchronized to an authoritative
           DOD time source at least every 24 hours.
-      rules: []
-      status: pending
+      rules:
+          - chronyd_or_ntpd_set_maxpoll
+      status: automated
 
     - id: SLEM-05-252015
       levels:
@@ -880,8 +883,9 @@ controls:
       title:
           SLEM 5 must display the date and time of the last successful account logon
           upon logon.
-      rules: []
-      status: pending
+      rules:
+          - display_login_attempts
+      status: automated
 
     - id: SLEM-05-412015
       levels:
@@ -970,8 +974,11 @@ controls:
       title:
           SLEM 5 must reauthenticate users when changing authenticators, roles, or
           escalating privileges.
-      rules: []
-      status: pending
+      rules:
+          - sudo_require_authentication
+          - sudo_remove_nopasswd
+          - sudo_remove_no_authenticate
+      status: automated
 
     - id: SLEM-05-432020
       levels:
@@ -1014,8 +1021,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must enforce passwords that contain at least one numeric character.
-      rules: []
-      status: pending
+      rules:
+          - sudo_require_reauthentication
+      status: automated
 
     - id: SLEM-05-611025
       levels:
@@ -1028,8 +1036,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must prevent the use of dictionary words for passwords.
-      rules: []
-      status: pending
+      rules:
+          - cracklib_accounts_password_pam_retry
+      status: automated
 
     - id: SLEM-05-611035
       levels:
@@ -1176,8 +1185,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must implement certificate status checking for multifactor authentication.
-      rules: []
-      status: pending
+      rules:
+          - smartcard_configure_cert_checking
+      status: automated
 
     - id: SLEM-05-631010
       levels:
@@ -1185,8 +1195,9 @@ controls:
       title:
           If Network Security Services (NSS) is being used by SLEM 5 it must prohibit
           the use of cached authentications after one day.
-      rules: []
-      status: pending
+      rules:
+          - sssd_memcache_timeout
+      status: automated
 
     - id: SLEM-05-631015
       levels:
@@ -1194,8 +1205,9 @@ controls:
       title:
           SLEM 5 must configure the Linux Pluggable Authentication Modules (PAM) to
           prohibit the use of cached offline authentications after one day.
-      rules: []
-      status: pending
+      rules:
+          - sssd_offline_cred_expiration
+      status: automated
 
     - id: SLEM-05-631020
       levels:
@@ -1258,8 +1270,9 @@ controls:
       title:
           Advanced Intrusion Detection Environment (AIDE) must verify the baseline
           SLEM 5 configuration at least weekly.
-      rules: []
-      status: pending
+      rules:
+          - aide_periodic_cron_checking
+      status: automated
 
     - id: SLEM-05-651035
       levels:
@@ -1268,8 +1281,10 @@ controls:
           SLEM 5 must notify the system administrator (SA) when Advanced Intrusion
           Detection Environment (AIDE) discovers anomalies in the operation of any security
           functions.
-      rules: []
-      status: pending
+      rules:
+          - aide_periodic_checking_systemd_timer
+          - aide_scan_notification
+      status: automated
 
     - id: SLEM-05-652010
       levels:
@@ -1277,8 +1292,9 @@ controls:
       title:
           SLEM 5 must offload rsyslog messages for networked systems in real time and
           offload standalone systems at least weekly.
-      rules: []
-      status: pending
+      rules:
+          - rsyslog_remote_loghost
+      status: automated
 
     - id: SLEM-05-653010
       levels:
@@ -1320,8 +1336,9 @@ controls:
           SLEM 5 auditd service must notify the system administrator (SA) and information
           system security officer (ISSO) immediately when audit storage capacity is 75 percent
           full.
-      rules: []
-      status: pending
+      rules:
+          - auditd_data_retention_space_left
+      status: automated
 
     - id: SLEM-05-653035
       levels:
@@ -1339,15 +1356,17 @@ controls:
       title:
           SLEM 5 must offload audit records onto a different system or media from the
           system being audited.
-      rules: []
-      status: pending
+      rules:
+          - auditd_audispd_network_failure_action
+      status: automated
 
     - id: SLEM-05-653045
       levels:
           - medium
       title: Audispd must take appropriate action when SLEM 5 audit storage is full.
-      rules: []
-      status: pending
+      rules:
+          - auditd_audispd_disk_full_action
+      status: automated
 
     - id: SLEM-05-653050
       levels:
@@ -1379,8 +1398,9 @@ controls:
       levels:
           - low
       title: SLEM 5 audit event multiplexor must be configured to use Kerberos.
-      rules: []
-      status: pending
+      rules:
+          - auditd_audispd_encrypt_sent_records
+      status: automated
 
     - id: SLEM-05-653070
       levels:
@@ -1388,8 +1408,9 @@ controls:
       title:
           Audispd must offload audit records onto a different system or media from
           SLEM 5 being audited.
-      rules: []
-      status: pending
+      rules:
+          - auditd_audispd_configure_remote_server
+      status: automated
 
     - id: SLEM-05-653075
       levels:
@@ -1738,8 +1759,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for all uses of privileged functions.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_suid_privilege_function
+      status: automated
 
     - id: SLEM-05-654200
       levels:
@@ -1802,22 +1824,25 @@ controls:
       levels:
           - medium
       title: SLEM 5 must generate audit records for the "/run/utmp file".
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_session_events_utmp
+      status: automated
 
     - id: SLEM-05-654235
       levels:
           - medium
       title: SLEM 5 must generate audit records for the "/var/log/btmp" file.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_session_events_btmp
+      status: automated
 
     - id: SLEM-05-654240
       levels:
           - medium
       title: SLEM 5 must generate audit records for the "/var/log/wtmp" file.
-      rules: []
-      status: pending
+      rules:
+          - audit_rules_session_events_wtmp
+      status: automated
 
     - id: SLEM-05-654245
       levels:
