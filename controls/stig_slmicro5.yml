@@ -746,8 +746,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 wireless network adapters must be disabled unless approved and documented.
-      rules: []
-      status: pending
+      rules:
+          - wireless_disable_interfaces
+      status: automated
 
     - id: SLEM-05-291015
       levels:
@@ -1247,8 +1248,9 @@ controls:
       title:
           SLEM 5 file integrity tool must be configured to protect the integrity of
           the audit tools.
-      rules: []
-      status: pending
+      rules:
+          - aide_check_audit_tools
+      status: automated
 
     - id: SLEM-05-651030
       levels:
