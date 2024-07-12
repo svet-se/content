@@ -1,4 +1,4 @@
-{{%- if "sle" in product or "ubuntu" in product %}}
+{{%- if "sle" in product or "slmicro" in product or "ubuntu" in product %}}
 {{%- set pam_lastlog_path = "/etc/pam.d/login" %}}
 {{%- else %}}
 {{%- set pam_lastlog_path = "/etc/pam.d/postlogin" %}}
@@ -6,7 +6,7 @@
 
 {{%- if "ol" in product or "ubuntu" in product %}}
 {{%- set control = "required" %}}
-{{%- elif "sle" in product %}}
+{{%- elif "sle" in product or "slmicro" in product %}}
 {{%- set control = "optional" %}}
 {{%- else %}}
 {{%- set control = "[default=1]" %}}
@@ -36,6 +36,7 @@ identifiers:
     cce@rhel9: CCE-83560-3
     cce@sle12: CCE-83149-5
     cce@sle15: CCE-85560-1
+    cce@slmicro5: CCE-93730-0
 
 references:
     cis-csc: 1,12,15,16
