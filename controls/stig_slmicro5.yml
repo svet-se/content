@@ -856,6 +856,7 @@ controls:
       title: SLEM 5 must not have unnecessary accounts.
       rules:
           - accounts_authorized_local_users
+          - var_accounts_authorized_local_users_regex=slmicro5
       status: automated
 
     - id: SLEM-05-411060
