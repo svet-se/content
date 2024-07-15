@@ -1142,6 +1142,7 @@ controls:
           for system authentication.
       rules:
           - set_password_hashing_algorithm_logindefs
+          - var_password_hashing_algorithm=SHA512
       status: automated
 
     - id: SLEM-05-611085
@@ -1162,6 +1163,7 @@ controls:
           for system authentication (login.defs).
       rules:
           - set_password_hashing_algorithm_logindefs
+          - var_password_hashing_algorithm=SHA512
       status: automated
 
     - id: SLEM-05-611095
