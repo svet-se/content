@@ -1140,10 +1140,8 @@ controls:
       title:
           SLEM 5 must employ FIPS 140-2/140-3-approved cryptographic hashing algorithms
           for system authentication.
-      rules:
-          - set_password_hashing_algorithm_logindefs
-          - var_password_hashing_algorithm=SHA512
-      status: automated
+      rules: []
+      status: pending
 
     - id: SLEM-05-611085
       levels:
