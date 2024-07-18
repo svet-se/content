@@ -11,7 +11,7 @@
           test_ref="test_aide_var_cron_notification" />
         <criterion comment="notify personnel when aide completes in cron.(d|daily|weekly|monthly)"
           test_ref="test_aide_crontabs_notification" />
-{{% if product in ["sle15"] %}}
+{{% if product in ["sle15", "slmicro5"] %}}
         <criteria operator="AND">
           <criterion comment="notification started after check"
             test_ref="test_aidecheck_systemd_scan_before_notification"/>
