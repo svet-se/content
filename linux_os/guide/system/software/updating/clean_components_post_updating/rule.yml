@@ -6,7 +6,7 @@ title: 'Ensure {{{ pkg_manager }}} Removes Previous Package Versions'
 description: |-
     <tt>{{{ pkg_manager }}}</tt> should be configured to remove previous software components after
     new versions have been installed. To configure <tt>{{{ pkg_manager }}}</tt> to remove the
-    {{% if 'sle' in product %}}
+    {{% if 'sle' in product or 'slmicro' in product %}}
     previous software components after updating, set the <tt>solver.upgradeRemoveDroppedPackages</tt>
     {{% elif 'ubuntu' in product %}}
     previous software components after updating, set the <tt>::Remove-Unused-Dependencies</tt> and
@@ -52,7 +52,7 @@ references:
     stigid@ubuntu2204: UBTU-22-214015
 
 ocil_clause: |-
-    {{%- if 'sle' in product %}}
+    {{%- if 'sle' in product or 'slmicro' in product %}}
     'solver.upgradeRemoveDroppedPackages is not enabled or configured correctly'
     {{%- elif 'ubuntu' in product %}}
     '::Remove-Unused-Dependencies and ::Remove-Unused-Kernel-Packages is not
@@ -64,7 +64,7 @@ ocil_clause: |-
 ocil: |-
     Verify {{{ full_name }}} removes all software components after updated versions have been installed.
 
-    {{% if 'sle' in product %}}
+    {{% if 'sle' in product or 'slmicro' in product %}}
     To verify that <tt>solver.upgradeRemoveDroppedPackages</tt> is configured properly, run the
     following command:
     <pre>$ grep -i upgradeRemoveDroppedPackages {{{ pkg_manager_config_file }}}</pre>
