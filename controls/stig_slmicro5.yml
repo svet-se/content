@@ -1342,8 +1342,9 @@ controls:
       levels:
           - medium
       title: The audit-audispd-plugins package must be installed on SLEM 5.
-      rules: []
-      status: pending
+      rules:
+          - package_audit-audispd-plugins_installed
+      status: automated
 
     - id: SLEM-05-653025
       levels:
