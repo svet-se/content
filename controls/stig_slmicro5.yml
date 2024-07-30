@@ -1037,8 +1037,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must enforce passwords that contain at least one lowercase character.
-      rules: []
-      status: pending
+      rules:
+          - cracklib_accounts_password_pam_lcredit
+      status: automated
 
     - id: SLEM-05-611020
       levels:
