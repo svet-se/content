@@ -73,8 +73,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 kernel core dumps must be disabled unless needed.
-      rules: []
-      status: pending
+      rules:
+          - service_kdump_disabled
+      status: automated
 
     - id: SLEM-05-213020
       levels:
