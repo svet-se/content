@@ -1054,8 +1054,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must enforce passwords that contain at least one special character.
-      rules: []
-      status: pending
+      rules:
+          - cracklib_accounts_password_pam_ocredit
+      status: automated
 
     - id: SLEM-05-611030
       levels:
