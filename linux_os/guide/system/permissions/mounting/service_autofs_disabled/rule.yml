@@ -29,6 +29,7 @@ identifiers:
     cce@rhel9: CCE-83850-8
     cce@sle12: CCE-83070-3
     cce@sle15: CCE-83278-2
+    cce@slmicro5: CCE-93772-2
 
 references:
     cis-csc: 1,12,15,16,5

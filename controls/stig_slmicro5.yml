@@ -214,8 +214,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must disable the file system automounter unless required.
-      rules: []
-      status: pending
+      rules:
+          - service_autofs_disabled
+      status: automated
 
     - id: SLEM-05-232010
       levels:
