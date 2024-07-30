@@ -1346,8 +1346,9 @@ controls:
       title:
           SLEM 5 audit records must contain information to establish what type of events
           occurred, the source of events, where events occurred, and the outcome of events.
-      rules: []
-      status: pending
+      rules:
+          - service_auditd_enabled
+      status: automated
 
     - id: SLEM-05-653020
       levels:
