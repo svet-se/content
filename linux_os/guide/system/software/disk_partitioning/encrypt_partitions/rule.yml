@@ -13,7 +13,7 @@ description: |-
     option is selected the system will prompt for a passphrase to use in
     decrypting the partition. The passphrase will subsequently need to be entered manually
     every time the system boots.
-    {{% if product not in ["sle12", "sle15", "ubuntu2004", "ubuntu2204"] %}}
+    {{% if product not in ["sle12", "sle15", "slmicro5", "ubuntu2004", "ubuntu2204"] %}}
     <br /><br />
     For automated/unattended installations, it is possible to use Kickstart by adding
     the <tt>--encrypted</tt> and <tt>--passphrase=</tt> options to the definition of each partition to be
@@ -36,8 +36,12 @@ description: |-
         {{{ weblink(link="https://docs.oracle.com/en/operating-systems/oracle-linux/8/install/install-InstallingOracleLinuxManually.html#system-options") }}}
     {{% elif product == "ol9" %}}
         {{{ weblink(link="https://docs.oracle.com/en/operating-systems/oracle-linux/9/install/install-InstallingOracleLinuxManually.html#system-options") }}}
-    {{% elif product in ["sle12", "sle15"] %}}
-        {{{ weblink(link="https://www.suse.com/documentation/sled-12/book_security/data/sec_security_cryptofs_y2.html") }}}
+    {{% elif product == "sle12" %}}
+        {{{ weblink(link="https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-security-cryptofs.html#sec-security-cryptofs-y2-part-inst") }}}
+    {{% elif product == "sle15" %}}
+        {{{ weblink(link="https://documentation.suse.com/de-de/sles/15-SP5/html/SLES-all/cha-security-cryptofs.html") }}}
+    {{% elif product == "slmicro5" %}}
+        {{{ weblink(link="https://documentation.suse.com/sle-micro/5.2/html/SLE-Micro-all/cha-install.html#sec-settings-partitioning") }}}
     {{% elif 'ubuntu' in product %}}
         {{{ weblink(link="https://help.ubuntu.com/community/Full_Disk_Encryption_Howto_2019") }}}
     {{% elif product == "fedora" %}}
@@ -58,6 +62,7 @@ identifiers:
     cce@rhel9: CCE-90849-1
     cce@sle12: CCE-83046-3
     cce@sle15: CCE-85719-3
+    cce@slmicro5: CCE-93760-7
 
 references:
     cis-csc: 13,14
@@ -72,6 +77,7 @@ references:
     nist-csf: PR.DS-1,PR.DS-5
     nist@sle12: SC-28,SC-28.1
     nist@sle15: SC-28,SC-28.1
+    nist@slmicro5: SC-28,SC-28.1
     srg: SRG-OS-000405-GPOS-00184,SRG-OS-000185-GPOS-00079,SRG-OS-000404-GPOS-00183
     stigid@ol8: OL08-00-010030
     stigid@rhel8: RHEL-08-010030
