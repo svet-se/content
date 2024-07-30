@@ -1078,8 +1078,9 @@ controls:
       title:
           SLEM 5 must require the change of at least eight of the total number of characters
           when passwords are changed.
-      rules: []
-      status: pending
+      rules:
+          - cracklib_accounts_password_pam_difok
+      status: automated
 
     - id: SLEM-05-611045
       levels:
