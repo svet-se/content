@@ -1069,8 +1069,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must employ passwords with a minimum of 15 characters.
-      rules: []
-      status: pending
+      rules:
+          - cracklib_accounts_password_pam_minlen
+      status: automated
 
     - id: SLEM-05-611040
       levels:
