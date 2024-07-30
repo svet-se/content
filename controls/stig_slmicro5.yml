@@ -1005,8 +1005,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must require reauthentication when using the "sudo" command.
-      rules: []
-      status: pending
+      rules:
+          - sudo_require_reauthentication
+      status: automated
 
     - id: SLEM-05-432025
       levels:
@@ -1046,7 +1047,7 @@ controls:
           - medium
       title: SLEM 5 must enforce passwords that contain at least one numeric character.
       rules:
-          - sudo_require_reauthentication
+          - cracklib_accounts_password_pam_dcredit
       status: automated
 
     - id: SLEM-05-611025
