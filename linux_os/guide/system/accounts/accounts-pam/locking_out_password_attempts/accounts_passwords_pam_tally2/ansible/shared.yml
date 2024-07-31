@@ -1,4 +1,4 @@
-# platform = multi_platform_sle,multi_platform_ubuntu
+# platform = multi_platform_sle,multi_platform_slmicro,multi_platform_ubuntu
 # reboot = false
 # strategy = configure
 # complexity = low
@@ -6,7 +6,7 @@
 
 {{{ ansible_instantiate_variables("var_password_pam_tally2")  }}}
 
-{{% if product in ["sle12","sle15"] %}}
+{{% if product in ["sle12", "sle15", "slmicro5"] %}}
 {{% set cfg_file = '/etc/pam.d/login' %}}
 {{% else %}}
 {{% set cfg_file = '/etc/pam.d/common-auth' %}}

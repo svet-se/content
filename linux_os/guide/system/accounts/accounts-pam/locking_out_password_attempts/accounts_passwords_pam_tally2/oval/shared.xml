@@ -17,7 +17,7 @@
   </ind:textfilecontent54_test>
 
   <ind:textfilecontent54_object id="object_accounts_passwords_pam_tally2_deny_auth" comment="Check deny configuration of pam_tally2" version="1">
-  {{% if product in ["sle12","sle15" ] %}}
+  {{% if product in ["sle12", "sle15", "slmicro5"] %}}
   <ind:filepath>/etc/pam.d/login</ind:filepath>
   {{% else %}}  
     <ind:filepath>/etc/pam.d/common-auth</ind:filepath>
