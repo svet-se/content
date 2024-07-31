@@ -848,8 +848,9 @@ controls:
       levels:
           - medium
       title: SLEM 5 must automatically expire temporary accounts within 72 hours.
-      rules: []
-      status: pending
+      rules:
+          - account_temp_expire_date
+      status: automated
 
     - id: SLEM-05-411050
       levels:
