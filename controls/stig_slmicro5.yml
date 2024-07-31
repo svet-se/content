@@ -308,7 +308,8 @@ controls:
       levels:
           - medium
       title: SLEM 5 library directories must be owned by root.
-      rules: []
+      rules:
+          - dir_ownership_library_dirs
       status: pending
 
     - id: SLEM-05-232065
