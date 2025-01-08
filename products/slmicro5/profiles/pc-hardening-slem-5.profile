@@ -47,5 +47,7 @@ selections:
   - '!mount_option_noexec_remote_filesystems'
   - '!pam_disable_automatic_configuration'
   - '!gnome_gdm_disable_unattended_automatic_login'
+  - '!sysctl_net_ipv4_conf_all_accept_redirects'
+  - '!sysctl_net_ipv4_ip_forward'
   - '!selinux_user_login_roles'
 
