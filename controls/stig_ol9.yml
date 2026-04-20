@@ -3,7 +3,7 @@ policy: 'Oracle Linux 9 Security Technical Implementation Guide'
 title: 'Oracle Linux 9 Security Technical Implementation Guide'
 id: stig_ol9
 source: https://www.cyber.mil/stigs/downloads/
-version: V1R1
+version: V1R5
 reference_type: stigid
 product: ol9
 
@@ -466,14 +466,6 @@ controls:
       rules:
           - package_tftp-server_removed
       status: automated
-
-    - id: OL09-00-000140
-      levels:
-          - medium
-      title: OL 9 must not have the quagga package installed.
-      rules:
-          - package_quagga_removed
-      status: not applicable  # The quagga package is not available in OL 9
 
     - id: OL09-00-000145
       levels:
@@ -1754,7 +1746,7 @@ controls:
 
     - id: OL09-00-000261
       levels:
-          - medium
+          - high
       title: OL 9 must implement DOD-approved encryption ciphers to protect the confidentiality of SSH
           client connections.
       rules:
@@ -1762,18 +1754,9 @@ controls:
           - sshd_approved_ciphers=stig_ol9
       status: automated
 
-    - id: OL09-00-000252
-      levels:
-          - medium
-      title: The OL 9 SSH daemon must be configured to use systemwide cryptographic policies.
-      rules:
-          - file_sshd_50_redhat_exists
-          - sshd_include_crypto_policy
-      status: automated
-
     - id: OL09-00-000254
       levels:
-          - medium
+          - high
       title: OL 9 SSH server must be configured to use only ciphers employing FIPS 140-3 validated cryptographic
           hash algorithms to protect the confidentiality of SSH server connections.
       rules:
@@ -1783,7 +1766,7 @@ controls:
 
     - id: OL09-00-000262
       levels:
-          - medium
+          - high
       title: OL 9 SSH client must be configured to use only Message Authentication Codes (MACs) employing
           FIPS 140-3 validated cryptographic hash algorithms.
       status: automated
@@ -1793,7 +1776,7 @@ controls:
 
     - id: OL09-00-000255
       levels:
-          - medium
+          - high
       title: OL 9 SSH server must be configured to use only Message Authentication Codes (MACs) employing
           FIPS 140-3 validated cryptographic hash algorithms.
       rules:
@@ -3777,7 +3760,7 @@ controls:
 
     - id: OL09-00-002404
       levels:
-          - medium
+          - high
       title: OL 9 IP tunnels must use FIPS 140-2/140-3 approved cryptographic algorithms.
       rules:
           - configure_libreswan_crypto_policy
@@ -3795,7 +3778,7 @@ controls:
 
     - id: OL09-00-000240
       levels:
-          - medium
+          - high
       title: OL 9 must have the crypto-policies package installed.
       rules:
           - package_crypto-policies_installed
@@ -3809,17 +3792,9 @@ controls:
           - rpm_verify_hashes
       status: automated
 
-    - id: OL09-00-000244
-      levels:
-          - high
-      title: OL 9 crypto policy files must match files shipped with the operating system.
-      rules:
-          - rpm_verify_crypto_policies
-      status: automated
-
     - id: OL09-00-000242
       levels:
-          - medium
+          - high
       title: OL 9 crypto policy must not be overridden.
       rules:
           - fips_crypto_policy_symlinks
@@ -3827,7 +3802,7 @@ controls:
 
     - id: OL09-00-000241
       levels:
-          - medium
+          - high
       title: OL 9 must implement a system-wide encryption policy.
       rules:
           - configure_crypto_policy
@@ -3835,7 +3810,7 @@ controls:
 
     - id: OL09-00-002421
       levels:
-          - medium
+          - high
       title: OL 9 must implement DOD-approved encryption in the bind package.
       rules:
           - configure_bind_crypto_policy
