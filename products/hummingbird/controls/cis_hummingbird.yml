@@ -1630,8 +1630,19 @@ controls:
       levels:
           - l1_server
           - l1_workstation
-      status: automated
-      rules:
+      status: manual
+      notes: >-
+          The requirement should be applicable for Hummingbird. However, there
+          is a problem if a container image is scanned. The reason is the OVAL
+          check reads the $PATH environment variable of the current process
+          from /proc. When using oscap-podman this OVAL works, because
+          oscap-podman creates a container first if an image is given and
+          containers contain /proc. But, when using openscap container, when
+          a container image is mounted to the openscap container, no /proc is
+          present in the mounted filesystem. Unfortunately, there is no easy
+          way how to detect the $PATH from mounted configuration files, so we
+          will keep the requirement as manual.
+      related_rules:
           - accounts_root_path_dirs_no_write
           - root_path_no_dot
 
