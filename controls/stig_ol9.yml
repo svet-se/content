@@ -1761,6 +1761,7 @@ controls:
           hash algorithms to protect the confidentiality of SSH server connections.
       rules:
           - harden_sshd_ciphers_opensshserver_conf_crypto_policy
+          - harden_sshd_ciphers_opensshserver_conf_crypto_policy.severity=high
           - sshd_approved_ciphers=stig_ol9
       status: automated
 
@@ -1772,6 +1773,7 @@ controls:
       status: automated
       rules:
           - harden_sshd_macs_openssh_conf_crypto_policy
+          - harden_sshd_macs_openssh_conf_crypto_policy.severity=high
           - sshd_strong_macs=stig_ol9
 
     - id: OL09-00-000255
@@ -1781,6 +1783,7 @@ controls:
           FIPS 140-3 validated cryptographic hash algorithms.
       rules:
           - harden_sshd_macs_opensshserver_conf_crypto_policy
+          - harden_sshd_macs_opensshserver_conf_crypto_policy.severity=high
           - sshd_approved_macs=stig_ol9
       status: automated
 
@@ -3782,6 +3785,7 @@ controls:
       title: OL 9 must have the crypto-policies package installed.
       rules:
           - package_crypto-policies_installed
+          - package_crypto-policies_installed.severity=high
       status: automated
 
     - id: OL09-00-000243
@@ -3798,6 +3802,7 @@ controls:
       title: OL 9 crypto policy must not be overridden.
       rules:
           - fips_crypto_policy_symlinks
+          - fips_crypto_policy_symlinks.severity=high
       status: automated
 
     - id: OL09-00-000241
