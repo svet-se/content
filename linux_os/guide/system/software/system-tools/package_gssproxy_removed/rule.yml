@@ -31,6 +31,10 @@ fixtext: '{{{ fixtext_package_removed("gssproxy") }}}'
 platforms:
 {{{ rule_notapplicable_when_ovirt_installed() | indent(4)}}}
 
+{{% if "ol" in families %}}
+platform: not nfs_mount_defined
+{{% endif %}}
+
 warnings:
 {{{ warning_ovirt_rule_notapplicable("RHV uses NFS storage, which has dependency on gssproxy") | indent(4) }}}
 
