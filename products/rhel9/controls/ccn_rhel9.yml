@@ -488,6 +488,7 @@ controls:
           - package_telnet-server_removed
           - package_tftp-server_removed
           - package_vsftpd_removed
+          - service_kdump_disabled
 
     - id: A.8.SEC-RHEL5
       title: Application Execution is Controlled
