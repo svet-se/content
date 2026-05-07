@@ -121,6 +121,7 @@ remote_login_banner_text=cis_banners
 selinux_policytype
 selinux_state
 service_firewalld_enabled
+service_kdump_disabled
 service_nftables_disabled
 service_usbguard_enabled
 set_firewalld_default_zone
