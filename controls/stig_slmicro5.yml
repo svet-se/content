@@ -21,13 +21,6 @@ controls:
           - installed_OS_is_vendor_supported
       status: automated
 
-    - id: SLEM-05-211015
-      levels:
-          - medium
-      title: SLEM 5 must implement an endpoint security tool.
-      rules: []
-      status: manual
-
     - id: SLEM-05-211020
       levels:
           - medium
